@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Markapur News - మార్కాపూర్ వార్తలు - Your local news portal"/>
+<title>మార్కాపూర్ న్యూస్ | Markapur News</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Telugu&family=Noto+Sans+Telugu:wght@400;700&family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --saffron:#FF6B00;
+  --deep-saffron:#E55A00;
+  --gold:#C8960C;
+  --dark:#1a1208;
+  --ink:#2c1f0a;
+  --body:#4a3728;
+  --muted:#8a7060;
+  --cream:#fdf6ec;
+  --pale:#fff8f0;
+  --border:#e8d5b0;
+  --white:#ffffff;
+  --green:#1a6b2f;
+  --red:#c0392b;
+  --blue:#1a4a7a;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--pale);
+  color:var(--ink);
+  font-family:'Source Serif 4',Georgia,serif;
+  line-height:1.6;
+}
+
+/* ── TOP BAR ── */
+.topbar{
+  background:var(--dark);
+  color:var(--cream);
+  padding:6px 0;
+  font-family:'Source Serif 4',serif;
+  font-size:0.72rem;
+  border-bottom:2px solid var(--saffron);
+}
+.topbar-inner{
+  max-width:1200px;margin:0 auto;padding:0 1.5rem;
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  flex-wrap:wrap;
+}
+.topbar-date{color:#c8a870;letter-spacing:0.05em;}
+.topbar-links{display:flex;gap:1.5rem;}
+.topbar-links a{color:#c8a870;text-decoration:none;transition:color 0.2s;}
+.topbar-links a:hover{color:var(--saffron);}
+
+/* ── HEADER ── */
+header{
+  background:var(--cream);
+  border-bottom:3px solid var(--dark);
+  padding:0;
+}
+.header-main{
+  max-width:1200px;margin:0 auto;padding:1.2rem 1.5rem;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;gap:1rem;
+}
+.header-tel{
+  font-family:'Noto Sans Telugu',serif;
+  font-size:0.78rem;
+  color:var(--muted);
+  line-height:1.6;
+}
+.header-logo{
+  text-align:center;
+}
+.logo-tel{
+  font-family:'Tiro Telugu',serif;
+  font-size:2.4rem;
+  color:var(--dark);
+  line-height:1.1;
+  display:block;
+}
+.logo-eng{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--saffron);
+  display:block;
+  margin-top:2px;
+}
+.logo-line{
+  display:block;
+  width:80%;margin:6px auto 0;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--saffron),transparent);
+}
+.header-tagline{
+  text-align:right;
+  font-style:italic;
+  font-size:0.75rem;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+/* ── NAV ── */
+nav{
+  background:var(--dark);
+  position:sticky;top:0;z-index:100;
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;padding:0 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;
+}
+.nav-links{display:flex;list-style:none;flex-wrap:wrap;}
+.nav-links a{
+  display:block;
+  padding:12px 16px;
+  color:#d4b896;
+  text-decoration:none;
+  font-size:0.8rem;
+  font-family:'Source Serif 4',serif;
+  letter-spacing:0.05em;
+  transition:background 0.2s,color 0.2s;
+  border-bottom:3px solid transparent;
+}
+.nav-links a:hover,.nav-links a.active{
+  color:var(--white);
+  border-bottom-color:var(--saffron);
+  background:rgba(255,107,0,0.1);
+}
+.nav-search{
+  display:flex;align-items:center;gap:8px;
+}
+.nav-search input{
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:3px;
+  padding:6px 12px;
+  color:var(--white);
+  font-size:0.75rem;
+  width:160px;
+  outline:none;
+  transition:border-color 0.2s;
+}
+.nav-search input::placeholder{color:rgba(255,255,255,0.4);}
+.nav-search input:focus{border-color:var(--saffron);}
+.nav-search button{
+  background:var(--saffron);
+  border:none;
+  color:white;
+  padding:6px 12px;
+  border-radius:3px;
+  cursor:pointer;
+  font-size:0.75rem;
+}
+
+/* ── TICKER ── */
+.ticker-wrap{
+  background:var(--saffron);
+  overflow:hidden;
+  padding:8px 0;
+}
+.ticker-inner{
+  max-width:1200px;margin:0 auto;padding:0 1.5rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.ticker-label{
+  background:var(--dark);
+  color:var(--white);
+  font-size:0.68rem;
+  font-weight:700;
+  letter-spacing:0.15em;
+  padding:3px 10px;
+  white-space:nowrap;
+  font-family:'Source Serif 4',serif;
+  flex-shrink:0;
+}
+.ticker-track{
+  overflow:hidden;flex:1;
+}
+.ticker-text{
+  display:inline-block;
+  white-space:nowrap;
+  animation:ticker 30s linear infinite;
+  font-size:0.78rem;
+  color:var(--dark);
+  font-family:'Noto Sans Telugu',sans-serif;
+}
+@keyframes ticker{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
+
+/* ── HERO ── */
+.hero{
+  max-width:1200px;margin:2rem auto;padding:0 1.5rem;
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:1.5rem;
+}
+.hero-main{
+  position:relative;overflow:hidden;
+  border:1px solid var(--border);
+}
+.hero-main img{
+  width:100%;height:420px;object-fit:cover;
+  display:block;
+  transition:transform 0.6s;
+}
+.hero-main:hover img{transform:scale(1.03);}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(26,18,8,0.92) 0%,rgba(26,18,8,0.3) 50%,transparent 100%);
+}
+.hero-content{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:2rem 1.5rem 1.5rem;
+}
+.news-cat{
+  display:inline-block;
+  background:var(--saffron);
+  color:var(--white);
+  font-size:0.62rem;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  padding:3px 10px;
+  margin-bottom:10px;
+  font-family:'Source Serif 4',serif;
+}
+.news-cat.green{background:var(--green);}
+.news-cat.blue{background:var(--blue);}
+.news-cat.red{background:var(--red);}
+
+.hero-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.9rem;
+  color:var(--white);
+  line-height:1.25;
+  margin-bottom:0.5rem;
+}
+.hero-meta{
+  font-size:0.72rem;
+  color:rgba(255,255,255,0.6);
+  letter-spacing:0.05em;
+}
+
+/* SIDE STORIES */
+.hero-side{
+  display:flex;flex-direction:column;gap:1px;
+  background:var(--border);
+}
+.side-card{
+  background:var(--cream);
+  overflow:hidden;
+  position:relative;
+  flex:1;
+  cursor:pointer;
+  transition:background 0.2s;
+}
+.side-card:hover{background:var(--white);}
+.side-card img{
+  width:100%;height:130px;object-fit:cover;
+  display:block;
+  filter:saturate(0.9);
+  transition:transform 0.4s;
+}
+.side-card:hover img{transform:scale(1.04);}
+.side-card-body{padding:0.8rem 1rem;}
+.side-card-title{
+  font-family:'Playfair Display',serif;
+  font-size:0.95rem;
+  color:var(--ink);
+  line-height:1.3;
+  margin-bottom:4px;
+}
+.side-card-meta{font-size:0.65rem;color:var(--muted);}
+
+/* ── SECTION HEADING ── */
+.sec-head{
+  display:flex;align-items:center;gap:1rem;
+  margin-bottom:1.5rem;
+}
+.sec-head-line{flex:1;height:1px;background:var(--border);}
+.sec-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem;
+  color:var(--dark);
+  white-space:nowrap;
+  position:relative;
+}
+.sec-title::after{
+  content:'';
+  position:absolute;bottom:-4px;left:0;right:0;
+  height:3px;
+  background:var(--saffron);
+}
+.sec-title.tel{
+  font-family:'Tiro Telugu',serif;
+  font-size:1.2rem;
+}
+
+/* ── NEWS GRID ── */
+.section{max-width:1200px;margin:0 auto 3rem;padding:0 1.5rem;}
+
+.news-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+.news-card{
+  border:1px solid var(--border);
+  background:var(--cream);
+  overflow:hidden;
+  transition:box-shadow 0.3s,transform 0.3s;
+  cursor:pointer;
+}
+.news-card:hover{
+  box-shadow:0 8px 30px rgba(26,18,8,0.12);
+  transform:translateY(-3px);
+}
+.news-card img{
+  width:100%;height:180px;
+  object-fit:cover;display:block;
+  filter:saturate(0.85);
+  transition:filter 0.3s,transform 0.4s;
+}
+.news-card:hover img{filter:saturate(1);transform:scale(1.03);}
+.news-card-body{padding:1rem 1.1rem 1.2rem;}
+.news-card-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;
+  line-height:1.35;
+  color:var(--dark);
+  margin:8px 0 6px;
+}
+.news-card-excerpt{
+  font-size:0.8rem;
+  color:var(--body);
+  line-height:1.65;
+  margin-bottom:10px;
+}
+.news-card-meta{
+  display:flex;justify-content:space-between;
+  font-size:0.65rem;
+  color:var(--muted);
+  border-top:1px solid var(--border);
+  padding-top:8px;
+  margin-top:8px;
+}
+.read-more{
+  color:var(--saffron);
+  font-size:0.72rem;
+  text-decoration:none;
+  display:inline-flex;align-items:center;gap:4px;
+  font-weight:600;
+  font-family:'Source Serif 4',serif;
+}
+.read-more:hover{color:var(--deep-saffron);}
+
+/* ── FEATURED STRIP ── */
+.featured-strip{
+  max-width:1200px;margin:0 auto 3rem;padding:0 1.5rem;
+}
+.strip-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1.5rem;
+}
+.strip-card{
+  display:flex;gap:1rem;
+  background:var(--cream);
+  border:1px solid var(--border);
+  padding:1rem;
+  transition:box-shadow 0.2s;
+  cursor:pointer;
+}
+.strip-card:hover{box-shadow:0 4px 20px rgba(26,18,8,0.1);}
+.strip-card img{
+  width:110px;height:90px;
+  object-fit:cover;flex-shrink:0;
+}
+.strip-card-body{flex:1;}
+.strip-card-title{
+  font-family:'Playfair Display',serif;
+  font-size:0.95rem;
+  line-height:1.3;
+  color:var(--dark);
+  margin:6px 0 4px;
+}
+.strip-card-meta{font-size:0.65rem;color:var(--muted);}
+
+/* ── PHOTO GALLERY ── */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:4px;
+}
+.gallery-item{
+  position:relative;overflow:hidden;
+  aspect-ratio:1;
+  cursor:pointer;
+}
+.gallery-item img{
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:grayscale(20%);
+  transition:transform 0.5s,filter 0.3s;
+}
+.gallery-item:hover img{transform:scale(1.1);filter:grayscale(0);}
+.gallery-item-overlay{
+  position:absolute;inset:0;
+  background:rgba(26,18,8,0.5);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity 0.3s;
+}
+.gallery-item:hover .gallery-item-overlay{opacity:1;}
+.gallery-item-overlay span{
+  color:white;font-size:0.7rem;
+  text-align:center;padding:0.5rem;
+  font-family:'Source Serif 4',serif;
+  font-style:italic;
+}
+.gallery-item.wide{grid-column:span 2;}
+
+/* ── TWO-COL LAYOUT ── */
+.two-col{
+  max-width:1200px;margin:0 auto 3rem;padding:0 1.5rem;
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:2rem;
+}
+
+/* ── SIDEBAR ── */
+.sidebar{}
+.sidebar-widget{
+  background:var(--cream);
+  border:1px solid var(--border);
+  margin-bottom:1.5rem;
+  overflow:hidden;
+}
+.widget-head{
+  background:var(--dark);
+  color:var(--white);
+  padding:10px 15px;
+  font-family:'Playfair Display',serif;
+  font-size:0.9rem;
+  letter-spacing:0.05em;
+  display:flex;align-items:center;gap:8px;
+}
+.widget-head .dot{
+  width:8px;height:8px;
+  background:var(--saffron);
+  border-radius:50%;
+  display:inline-block;
+}
+.widget-body{padding:1rem;}
+
+.weather-box{
+  text-align:center;padding:1.2rem;
+}
+.weather-temp{
+  font-family:'Playfair Display',serif;
+  font-size:3rem;
+  color:var(--saffron);
+  line-height:1;
+}
+.weather-place{
+  font-size:0.75rem;
+  color:var(--body);
+  margin:4px 0 8px;
+  font-family:'Noto Sans Telugu',sans-serif;
+}
+.weather-desc{
+  font-size:0.8rem;
+  color:var(--muted);
+  font-style:italic;
+}
+.weather-row{
+  display:flex;justify-content:center;gap:1.5rem;
+  margin-top:12px;font-size:0.7rem;color:var(--body);
+}
+
+.mini-news-list{list-style:none;}
+.mini-news-list li{
+  padding:10px 0;
+  border-bottom:1px dotted var(--border);
+  display:flex;gap:10px;
+  align-items:flex-start;
+}
+.mini-news-list li:last-child{border-bottom:none;}
+.mini-num{
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem;
+  color:var(--saffron);
+  line-height:1;
+  flex-shrink:0;
+  width:24px;
+}
+.mini-title{
+  font-size:0.8rem;
+  color:var(--dark);
+  line-height:1.4;
+  font-family:'Source Serif 4',serif;
+}
+.mini-meta{font-size:0.62rem;color:var(--muted);margin-top:2px;}
+
+.events-list{list-style:none;}
+.events-list li{
+  display:grid;
+  grid-template-columns:50px 1fr;
+  gap:10px;
+  padding:10px 0;
+  border-bottom:1px dotted var(--border);
+  align-items:center;
+}
+.event-date{
+  background:var(--saffron);
+  color:white;
+  text-align:center;
+  padding:4px;
+  font-size:0.7rem;
+  line-height:1.3;
+}
+.event-date strong{display:block;font-size:1.2rem;font-family:'Playfair Display',serif;}
+.event-name{font-size:0.8rem;color:var(--dark);line-height:1.4;}
+.event-place{font-size:0.65rem;color:var(--muted);}
+
+/* ── OPINION / COLUMN ── */
+.opinion-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+.opinion-card{
+  border:1px solid var(--border);
+  background:var(--cream);
+  padding:1.5rem;
+  position:relative;
+}
+.opinion-card::before{
+  content:'"';
+  position:absolute;top:10px;right:16px;
+  font-family:'Playfair Display',serif;
+  font-size:5rem;
+  color:var(--border);
+  line-height:1;
+  pointer-events:none;
+}
+.opinion-author{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:1rem;
+}
+.author-avatar{
+  width:44px;height:44px;
+  border-radius:50%;
+  background:var(--saffron);
+  color:white;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;
+  font-family:'Playfair Display',serif;
+  font-weight:700;
+  flex-shrink:0;
+}
+.author-name{font-size:0.85rem;color:var(--dark);font-weight:600;font-family:'Source Serif 4',serif;}
+.author-role{font-size:0.65rem;color:var(--muted);}
+.opinion-text{
+  font-size:0.82rem;
+  color:var(--body);
+  line-height:1.75;
+  font-style:italic;
+}
+
+/* ── AD BANNER ── */
+.ad-banner{
+  background:linear-gradient(135deg,var(--dark) 0%,#3a2a10 100%);
+  max-width:1200px;margin:0 auto 3rem;padding:2rem 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;flex-wrap:wrap;
+}
+.ad-text{color:var(--cream);}
+.ad-title{
+  font-family:'Tiro Telugu',serif;
+  font-size:1.5rem;
+  margin-bottom:4px;
+}
+.ad-sub{font-size:0.78rem;color:#c8a870;font-style:italic;}
+.ad-btn{
+  background:var(--saffron);
+  color:white;
+  padding:10px 24px;
+  font-size:0.8rem;
+  font-family:'Source Serif 4',serif;
+  border:none;cursor:pointer;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  transition:background 0.2s;
+}
+.ad-btn:hover{background:var(--deep-saffron);}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--dark);
+  color:#c8a870;
+  padding:3rem 0 0;
+}
+.footer-inner{
+  max-width:1200px;margin:0 auto;padding:0 1.5rem;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:2rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.footer-brand .logo-tel{font-size:1.8rem;color:var(--cream);}
+.footer-brand .logo-eng{font-size:0.85rem;}
+.footer-brand p{
+  font-size:0.75rem;
+  color:#8a7060;
+  line-height:1.7;
+  margin-top:0.8rem;
+  max-width:260px;
+}
+.footer-col h4{
+  font-family:'Playfair Display',serif;
+  font-size:0.9rem;
+  color:var(--cream);
+  margin-bottom:1rem;
+  padding-bottom:8px;
+  border-bottom:1px solid rgba(255,255,255,0.15);
+}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:8px;}
+.footer-col ul li a{
+  color:#8a7060;
+  text-decoration:none;
+  font-size:0.78rem;
+  transition:color 0.2s;
+}
+.footer-col ul li a:hover{color:var(--saffron);}
+.footer-bottom{
+  max-width:1200px;margin:0 auto;padding:1rem 1.5rem;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:0.5rem;
+}
+.footer-bottom p{font-size:0.68rem;color:#5a4a35;}
+.social-links{display:flex;gap:10px;}
+.social-links a{
+  width:32px;height:32px;
+  border:1px solid rgba(255,255,255,0.15);
+  color:#8a7060;
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.75rem;
+  text-decoration:none;
+  transition:background 0.2s,color 0.2s;
+}
+.social-links a:hover{background:var(--saffron);color:white;border-color:var(--saffron);}
+
+/* ── DIVIDER ── */
+.ornament{
+  text-align:center;
+  color:var(--border);
+  font-size:1.2rem;
+  margin:1.5rem 0;
+  letter-spacing:0.5em;
+}
+
+/* ── MODAL ── */
+#modal{
+  display:none;
+  position:fixed;inset:0;
+  background:rgba(0,0,0,0.75);
+  z-index:1000;
+  overflow-y:auto;
+  padding:2rem 1rem;
+}
+#modal.open{display:flex;align-items:flex-start;justify-content:center;}
+.modal-box{
+  background:var(--cream);
+  max-width:720px;width:100%;
+  border-top:4px solid var(--saffron);
+  padding:2rem;
+  position:relative;
+}
+.modal-close{
+  position:absolute;top:1rem;right:1rem;
+  background:none;border:none;font-size:1.5rem;
+  cursor:pointer;color:var(--muted);
+}
+.modal-img{
+  width:100%;height:320px;object-fit:cover;
+  margin-bottom:1.5rem;
+}
+.modal-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.8rem;
+  color:var(--dark);
+  line-height:1.25;
+  margin-bottom:1rem;
+}
+.modal-body{
+  font-size:0.9rem;
+  color:var(--body);
+  line-height:1.8;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;} 
+  .hero-side{flex-direction:row;}
+  .news-grid{grid-template-columns:1fr 1fr;}
+  .two-col{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-inner{grid-template-columns:1fr 1fr;}
+  .opinion-grid{grid-template-columns:1fr;}
+  .strip-grid{grid-template-columns:1fr;}
+  .header-main{grid-template-columns:1fr;text-align:center;}
+  .header-tagline{text-align:center;}
+}
+@media(max-width:600px){
+  .news-grid{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:1fr 1fr;}
+  .hero-main img{height:260px;}
+  .hero-title{font-size:1.3rem;}
+  .footer-inner{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- MODAL -->
+<div id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <img id="modal-img" class="modal-img" src="" alt=""/>
+    <div class="news-cat" id="modal-cat"></div>
+    <h2 class="modal-title" id="modal-title"></h2>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-date" id="today-date"></span>
+    <div class="topbar-links">
+      <a href="#">హోమ్</a>
+      <a href="#">వీడియో</a>
+      <a href="#">ఫొటోలు</a>
+      <a href="#">సంప్రదించు</a>
+      <a href="#">ENGLISH</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-main">
+    <div class="header-tel">
+      <strong>మార్కాపూర్ రోడ్ రైల్వే స్టేషన్</strong><br/>
+      Prakasam District · Andhra Pradesh
+    </div>
+    <div class="header-logo">
+      <span class="logo-tel">మార్కాపూర్ వార్తలు</span>
+      <span class="logo-eng">Markapur News</span>
+      <span class="logo-line"></span>
+    </div>
+    <div class="header-tagline">
+      <em>"నమ్మకమైన వార్తలు, మీ గ్రామం నుండి"</em><br/>
+      Trusted news from your village
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <ul class="nav-links">
+      <li><a href="#" class="active">హోమ్</a></li>
+      <li><a href="#">స్థానిక వార్తలు</a></li>
+      <li><a href="#">వ్యవసాయం</a></li>
+      <li><a href="#">విద్య</a></li>
+      <li><a href="#">రాజకీయాలు</a></li>
+      <li><a href="#">వేడుకలు</a></li>
+      <li><a href="#">ఆరోగ్యం</a></li>
+      <li><a href="#">క్రీడలు</a></li>
+    </ul>
+    <div class="nav-search">
+      <input type="text" placeholder="వార్తలు వెతకండి…"/>
+      <button>🔍</button>
+    </div>
+  </div>
+</nav>
+
+<!-- BREAKING NEWS TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-label">🔴 తాజా వార్తలు</span>
+    <div class="ticker-track">
+      <span class="ticker-text">
+        ♦ మార్కాపూర్‌లో కొత్త ప్రభుత్వ ఆసుపత్రి నిర్మాణం ప్రారంభం &nbsp;&nbsp;&nbsp;
+        ♦ రబీ పంట సీజన్‌లో రైతులకు మేలు చేసే వర్షాలు &nbsp;&nbsp;&nbsp;
+        ♦ మార్కాపూర్ రోడ్ స్టేషన్‌లో కొత్త రైళ్లు మంజూరు &nbsp;&nbsp;&nbsp;
+        ♦ మున్సిపల్ ఎన్నికల షెడ్యూల్ విడుదల &nbsp;&nbsp;&nbsp;
+        ♦ స్థానిక పాఠశాలల్లో డిజిటల్ తరగతి గదులు మంజూరు &nbsp;&nbsp;&nbsp;
+        ♦ Markapur new bus routes announced from APSRTC &nbsp;&nbsp;&nbsp;
+        ♦ Srisailam Dam water level increases · irrigation benefits farmers &nbsp;&nbsp;&nbsp;
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-main" onclick="openModal('స్థానిక వార్తలు','మార్కాపూర్ రోడ్ రైల్వే స్టేషన్ అభివృద్ధి','https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Markapur_Road_Railway_Station.jpg/640px-Markapur_Road_Railway_Station.jpg','మార్కాపూర్ రోడ్ రైల్వే స్టేషన్‌లో ప్రయాణికులకు మరింత సౌకర్యవంతంగా సేవలు అందించేందుకు కొత్త ప్లాట్‌ఫామ్ నిర్మాణం మరియు ఆధునిక సౌకర్యాల ఏర్పాటు పనులు ప్రారంభమయ్యాయి. రైల్వే అధికారులు తెలిపిన వివరాల ప్రకారం, ఈ నిర్మాణం వచ్చే ఆరు నెలల్లో పూర్తవుతుందని అంచనా వేస్తున్నారు. స్థానిక ప్రజలు ఈ అభివృద్ధికి హర్షం వ్యక్తం చేస్తున్నారు. కొత్త ప్లాట్‌ఫామ్‌తో ప్రతిరోజూ వేలాది ప్రయాణికులకు ప్రయోజనం చేకూరనుంది.')">
+    <img src="images/station.jpg" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80'" alt="Markapur Road Railway Station"/>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="news-cat">స్థానిక వార్తలు</span>
+      <h1 class="hero-title">మార్కాపూర్ రోడ్ రైల్వే స్టేషన్‌లో కొత్త అభివృద్ధి పనులు ప్రారంభం</h1>
+      <p class="hero-meta">📅 మే 19, 2025 &nbsp;|&nbsp; ✍ మా ప్రత్యేక విలేకరి &nbsp;|&nbsp; 👁 2,841 వీక్షణలు</p>
+    </div>
+  </div>
+  <div class="hero-side">
+    <div class="side-card" onclick="openModal('హోటల్ & పర్యాటకం','మార్కాపూర్‌లో పర్యాటక అభివృద్ధి','images/hotel.jpg','మార్కాపూర్ పట్టణంలో హోటల్ సేవన్ హిల్స్ తమ విస్తరణ ప్రణాళికలు ప్రకటించింది. కొత్త రూమ్‌లు, రెస్టారెంట్ మరియు సమావేశ మందిరాలు నిర్మించనున్నారు. ఇది స్థానికులకు ఉద్యోగ అవకాశాలు కల్పిస్తుందని నిర్వాహకులు తెలిపారు.')">
+      <img src="images/hotel.jpg" onerror="this.src='https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80'" alt="Hotel Seven Hills"/>
+      <div class="side-card-body">
+        <span class="news-cat blue" style="font-size:0.58rem;padding:2px 7px;">పర్యాటకం</span>
+        <p class="side-card-title">హోటల్ సేవన్ హిల్స్ విస్తరణ — కొత్త రూమ్‌లు &amp; సేవలు</p>
+        <p class="side-card-meta">📅 మే 18, 2025</p>
+      </div>
+    </div>
+    <div class="side-card" onclick="openModal('శ్రీశైలం ప్రాజెక్ట్','శ్రీశైలం డ్యామ్ నీటి మట్టం పెరుగుదల','images/dam.jpg','శ్రీశైలం డ్యామ్‌లో నీటి మట్టం గణనీయంగా పెరిగింది. ఇది కృష్ణా జిల్లా రైతులకు గొప్త వార్త. సాగుకు నీరు సమృద్ధిగా అందనుందని అధికారులు తెలిపారు. డ్యామ్ ప్రస్తుత నీటి నిల్వ సామర్థ్యం 78 శాతానికి చేరుకుంది.')">
+      <img src="images/dam.jpg" onerror="this.src='https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80'" alt="Dam"/>
+      <div class="side-card-body">
+        <span class="news-cat green" style="font-size:0.58rem;padding:2px 7px;">నీటి వనరులు</span>
+        <p class="side-card-title">డ్యామ్ నీటి మట్టం 78%కి చేరుకుంది — రైతులకు శుభవార్త</p>
+        <p class="side-card-meta">📅 మే 17, 2025</p>
+      </div>
+    </div>
+    <div class="side-card" onclick="openModal('ఆలయం','ఛన్నకేశవస్వామి ఆలయ ప్రత్యేక పూజలు','images/temple.jpg','మార్కాపూర్ ప్రసిద్ధ ఛన్నకేశవస్వామి ఆలయంలో వైశాఖ మాస ప్రత్యేక పూజలు ప్రారంభమయ్యాయి. వేలాది భక్తులు ఆలయాన్ని సందర్శిస్తున్నారు. ప్రత్యేక అన్నప్రసాదం, కళ్యాణోత్సవాలు నిర్వహించనున్నారని ఆలయ అర్చకులు తెలిపారు.')">
+      <img src="images/temple.jpg" onerror="this.src='https://images.unsplash.com/photo-1617552523779-82f6a5f1a68c?w=600&q=80'" alt="Temple"/>
+      <div class="side-card-body">
+        <span class="news-cat red" style="font-size:0.58rem;padding:2px 7px;">ఆధ్యాత్మికం</span>
+        <p class="side-card-title">ఛన్నకేశవస్వామి ఆలయంలో వైశాఖ ప్రత్యేక పూజలు</p>
+        <p class="side-card-meta">📅 మే 16, 2025</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DIVIDER -->
+<div class="ornament">✦ ✦ ✦</div>
+
+<!-- MAIN NEWS GRID -->
+<section class="section">
+  <div class="sec-head">
+    <div class="sec-head-line"></div>
+    <h2 class="sec-title">తాజా వార్తలు</h2>
+    <div class="sec-head-line"></div>
+  </div>
+  <div class="news-grid">
+
+    <div class="news-card" onclick="openModal('వ్యవసాయం','మార్కాపూర్ రైతులకు కొత్త సేద్యం పథకం','https://images.unsplash.com/photo-1560493676-04071c5f467b?w=600&q=80','ఆంధ్రప్రదేశ్ ప్రభుత్వం మార్కాపూర్ ప్రాంత రైతులకు ప్రత్యేక వ్యవసాయ సహాయ పథకాన్ని ప్రకటించింది. ఈ పథకం కింద రైతులకు రూ.15,000 సహాయం అందించనున్నారు. దరఖాస్తు ప్రక్రియ వచ్చే వారం ప్రారంభమవుతుందని అధికారులు తెలిపారు.')">
+      <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=600&q=80" alt="Agriculture"/>
+      <div class="news-card-body">
+        <span class="news-cat green">వ్యవసాయం</span>
+        <h3 class="news-card-title">మార్కాపూర్ రైతులకు రూ.15వేల ప్రత్యేక వ్యవసాయ పథకం</h3>
+        <p class="news-card-excerpt">ఆంధ్రప్రదేశ్ ప్రభుత్వం ఈ ప్రాంత రైతులకు ప్రత్యేక సహాయ పథకాన్ని ప్రకటించింది. దరఖాస్తు ప్రక్రియ వచ్చే వారం మొదలవుతుంది...</p>
+        <div class="news-card-meta">
+          <span>📅 మే 19, 2025</span>
+          <a class="read-more" href="#">చదవండి →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card" onclick="openModal('విద్య','మార్కాపూర్ పాఠశాలల్లో స్మార్ట్ క్లాస్‌రూమ్‌లు','https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80','మార్కాపూర్ పట్టణంలోని 12 ప్రభుత్వ పాఠశాలల్లో డిజిటల్ స్మార్ట్ క్లాస్‌రూమ్‌లు ఏర్పాటు చేయనున్నారు. ఈ నిర్ణయంతో దాదాపు 8,000 మంది విద్యార్థులకు మేలు కలుగనుంది. కలెక్టర్ నేతృత్వంలో నేడు తనిఖీ నిర్వహించారు.')">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80" alt="Education"/>
+      <div class="news-card-body">
+        <span class="news-cat blue">విద్య</span>
+        <h3 class="news-card-title">12 ప్రభుత్వ పాఠశాలల్లో డిజిటల్ స్మార్ట్ క్లాస్‌రూమ్‌లు</h3>
+        <p class="news-card-excerpt">8,000 మంది విద్యార్థులకు మేలు కలుగనుంది. కలెక్టర్ నేతృత్వంలో నేడు తనిఖీ నిర్వహించి పనులు ప్రారంభించారు...</p>
+        <div class="news-card-meta">
+          <span>📅 మే 18, 2025</span>
+          <a class="read-more" href="#">చదవండి →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card" onclick="openModal('రాజకీయాలు','మున్సిపల్ ఎన్నికల ప్రచారం హోరాహోరీ','https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=600&q=80','మార్కాపూర్ మున్సిపాలిటీ ఎన్నికల ప్రచారం అన్ని పార్టీల నేతల సమావేశాలతో ఉధృతమైంది. TDP, YSRCP, జనసేన పార్టీలు బహిరంగ సభలు నిర్వహించాయి. ఓటర్లను ఆకర్షించేందుకు వివిధ హామీలు ఇస్తున్నారు.')">
+      <img src="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=600&q=80" alt="Politics"/>
+      <div class="news-card-body">
+        <span class="news-cat red">రాజకీయాలు</span>
+        <h3 class="news-card-title">మున్సిపల్ ఎన్నికల ప్రచారం — అన్ని పార్టీల హోరాహోరీ పోటీ</h3>
+        <p class="news-card-excerpt">బహిరంగ సభలు, రోడ్ షో లతో ఎన్నికల వాతావరణం వేడెక్కింది. వివిధ పార్టీలు ఓటర్లకు హామీలు ఇస్తున్నాయి...</p>
+        <div class="news-card-meta">
+          <span>📅 మే 17, 2025</span>
+          <a class="read-more" href="#">చదవండి →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card" onclick="openModal('ఆరోగ్యం','ఉచిత వైద్య శిబిరం మే 25న','https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&q=80','మార్కాపూర్ ప్రభుత్వ ఆసుపత్రిలో మే 25వ తేదీన ఉచిత వైద్య శిబిరం నిర్వహించనున్నారు. నేత్ర, దంత, హృద్రోగ నిపుణులు ఉచిత పరీక్షలు నిర్వహిస్తారు. సుమారు 500 మంది రోగులకు సేవలు అందించే ఏర్పాట్లు చేస్తున్నారు.')">
+      <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&q=80" alt="Health"/>
+      <div class="news-card-body">
+        <span class="news-cat">ఆరోగ్యం</span>
+        <h3 class="news-card-title">మే 25న ఉచిత వైద్య శిబిరం — నేత్ర, దంత, హృద్రోగ నిపుణులు</h3>
+        <p class="news-card-excerpt">500 మంది రోగులకు సేవలు అందించే ఏర్పాట్లు జరుగుతున్నాయి. ముందుగా నమోదు చేసుకోవడం తప్పనిసరి...</p>
+        <div class="news-card-meta">
+          <span>📅 మే 16, 2025</span>
+          <a class="read-more" href="#">చదవండి →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card" onclick="openModal('క్రీడలు','ఇంటర్ విలేజ్ క్రికెట్ టోర్నమెంట్ ఫైనల్','https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&q=80','మార్కాపూర్ ఇంటర్ విలేజ్ క్రికెట్ టోర్నమెంట్ ఫైనల్ మే 22న జరగనుంది. మార్కాపూర్ రెడ్స్ vs నారాయణపురం ఈగల్స్ మధ్య ఫైనల్ జరుగుతుంది. స్థానిక మైదానంలో ఉదయం 9 గంటలకు ప్రారంభమవుతుంది.')">
+      <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&q=80" alt="Cricket"/>
+      <div class="news-card-body">
+        <span class="news-cat green">క్రీడలు</span>
+        <h3 class="news-card-title">ఇంటర్ విలేజ్ క్రికెట్ టోర్నమెంట్ ఫైనల్ మే 22న</h3>
+        <p class="news-card-excerpt">మార్కాపూర్ రెడ్స్ vs నారాయణపురం ఈగల్స్ ఫైనల్‌లో తలపడనున్నాయి. భారీ సంఖ్యలో ప్రేక్షకులు హాజరవుతారని అంచనా...</p>
+        <div class="news-card-meta">
+          <span>📅 మే 15, 2025</span>
+          <a class="read-more" href="#">చదవండి →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card" onclick="openModal('వ్యాపారం','మార్కాపూర్ మార్కెట్‌లో కొత్త టెక్స్‌టైల్ కాంప్లెక్స్','https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=600&q=80','మార్కాపూర్ ప్రధాన వ్యాపార కేంద్రంలో కొత్త టెక్స్‌టైల్ కాంప్లెక్స్ నిర్మాణం ప్రారంభమైంది. ఇది 200 మందికి ప్రత్యక్ష ఉద్యోగాలు కల్పిస్తుందని ప్రమోటర్లు తెలిపారు. వచ్చే దీపావళికి ప్రారంభించాలని లక్ష్యంగా పెట్టుకున్నారు.')">
+      <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=600&q=80" alt="Market"/>
+      <div class="news-card-body">
+        <span class="news-cat blue">వ్యాపారం</span>
+        <h3 class="news-card-title">మార్కెట్‌లో కొత్త టెక్స్‌టైల్ కాంప్లెక్స్ — 200 ఉద్యోగాలు</h3>
+        <p class="news-card-excerpt">దీపావళికి ప్రారంభించాలని లక్ష్యం. 200 మందికి ప్రత్యక్ష ఉద్యోగాలు కల్పించనున్నారు...</p>
+        <div class="news-card-meta">
+          <span>📅 మే 14, 2025</span>
+          <a class="read-more" href="#">చదవండి →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHOTO GALLERY -->
+<section class="section">
+  <div class="sec-head">
+    <div class="sec-head-line"></div>
+    <h2 class="sec-title tel">మార్కాపూర్ ఫొటో గ్యాలరీ</h2>
+    <div class="sec-head-line"></div>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item wide">
+      <img src="images/station.jpg" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80'" alt="Station"/>
+      <div class="gallery-item-overlay"><span>మార్కాపూర్ రోడ్ రైల్వే స్టేషన్</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/temple.jpg" onerror="this.src='https://images.unsplash.com/photo-1617552523779-82f6a5f1a68c?w=600&q=80'" alt="Temple"/>
+      <div class="gallery-item-overlay"><span>ఛన్నకేశవస్వామి ఆలయం</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/dam.jpg" onerror="this.src='https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80'" alt="Dam"/>
+      <div class="gallery-item-overlay"><span>శ్రీశైలం ప్రాజెక్ట్</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/hotel.jpg" onerror="this.src='https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80'" alt="Hotel"/>
+      <div class="gallery-item-overlay"><span>హోటల్ సేవన్ హిల్స్</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&q=80" alt="Market"/>
+      <div class="gallery-item-overlay"><span>స్థానిక మార్కెట్</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1530841344095-98de20688c8c?w=600&q=80" alt="Festival"/>
+      <div class="gallery-item-overlay"><span>గ్రామ ఉత్సవాలు</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TWO COLUMN: NEWS + SIDEBAR -->
+<div class="two-col">
+
+  <!-- MAIN COLUMN -->
+  <div>
+    <!-- STRIP CARDS -->
+    <div class="sec-head">
+      <div class="sec-head-line"></div>
+      <h2 class="sec-title">మరిన్ని వార్తలు</h2>
+      <div class="sec-head-line"></div>
+    </div>
+    <div class="strip-grid">
+      <div class="strip-card">
+        <img src="https://images.unsplash.com/photo-1592477725143-2e57dc728f0a?w=300&q=80" alt="Road"/>
+        <div class="strip-card-body">
+          <span class="news-cat" style="font-size:0.58rem;padding:2px 7px;">మౌలిక వసతులు</span>
+          <p class="strip-card-title">మార్కాపూర్-గిద్దలూరు రహదారి విస్తరణ పనులు వేగవంతం</p>
+          <p class="strip-card-meta">📅 మే 13, 2025 &nbsp;|&nbsp; 👁 1,204</p>
+        </div>
+      </div>
+      <div class="strip-card">
+        <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=300&q=80" alt="Water"/>
+        <div class="strip-card-body">
+          <span class="news-cat green" style="font-size:0.58rem;padding:2px 7px;">నీటి సరఫరా</span>
+          <p class="strip-card-title">మార్కాపూర్ పట్టణానికి 24 గంటల నీటి సరఫరా పథకం</p>
+          <p class="strip-card-meta">📅 మే 12, 2025 &nbsp;|&nbsp; 👁 987</p>
+        </div>
+      </div>
+      <div class="strip-card">
+        <img src="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=300&q=80" alt="Artisans"/>
+        <div class="strip-card-body">
+          <span class="news-cat blue" style="font-size:0.58rem;padding:2px 7px;">చేతివృత్తులు</span>
+          <p class="strip-card-title">మార్కాపూర్ స్లేట్ పెన్సిల్ పరిశ్రమకు జాతీయ గుర్తింపు</p>
+          <p class="strip-card-meta">📅 మే 11, 2025 &nbsp;|&nbsp; 👁 3,450</p>
+        </div>
+      </div>
+      <div class="strip-card">
+        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=300&q=80" alt="Volunteers"/>
+        <div class="strip-card-body">
+          <span class="news-cat red" style="font-size:0.58rem;padding:2px 7px;">సామాజిక సేవ</span>
+          <p class="strip-card-title">స్వచ్ఛ మార్కాపూర్ — 500 మంది యువకుల పరిసరాల శుభ్రత</p>
+          <p class="strip-card-meta">📅 మే 10, 2025 &nbsp;|&nbsp; 👁 756</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPINION -->
+    <div class="sec-head" style="margin-top:2.5rem">
+      <div class="sec-head-line"></div>
+      <h2 class="sec-title">అభిప్రాయాలు</h2>
+      <div class="sec-head-line"></div>
+    </div>
+    <div class="opinion-grid">
+      <div class="opinion-card">
+        <div class="opinion-author">
+          <div class="author-avatar">ర</div>
+          <div>
+            <div class="author-name">రామకృష్ణ రెడ్డి</div>
+            <div class="author-role">రైతు నేత, మార్కాపూర్</div>
+          </div>
+        </div>
+        <p class="opinion-text">"నీటి సమస్య పరిష్కారం మా ప్రాంత రైతుల అతి ముఖ్యమైన అవసరం. ప్రభుత్వం ఈ దిశలో అడుగులు వేయాలి."</p>
+      </div>
+      <div class="opinion-card">
+        <div class="opinion-author">
+          <div class="author-avatar" style="background:var(--green)">స</div>
+          <div>
+            <div class="author-name">సావిత్రి దేవి</div>
+            <div class="author-role">ఉపాధ్యాయురాలు</div>
+          </div>
+        </div>
+        <p class="opinion-text">"డిజిటల్ తరగతి గదులు పిల్లల చదువుకు చాలా మేలు చేస్తాయి. ఇది ఊళ్ళో ఉండే పిల్లలకు పట్టణ విద్య అవకాశం."</p>
+      </div>
+      <div class="opinion-card">
+        <div class="opinion-author">
+          <div class="author-avatar" style="background:var(--blue)">వ</div>
+          <div>
+            <div class="author-name">వెంకట రావు</div>
+            <div class="author-role">వ్యాపారి, మార్కాపూర్</div>
+          </div>
+        </div>
+        <p class="opinion-text">"స్లేట్ పెన్సిల్ పరిశ్రమకు జాతీయ గుర్తింపు రావడం మాకు చాలా గర్వంగా ఉంది. ఇది మరింత ఉద్యోగాలు తెస్తుంది."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-widget">
+      <div class="widget-head"><span class="dot"></span> వాతావరణం · Markapur</div>
+      <div class="weather-box">
+        <div class="weather-temp" id="temp">34°C</div>
+        <div class="weather-place">మార్కాపూర్, ప్రకాశం జిల్లా</div>
+        <div class="weather-desc">☀️ స్వచ్ఛమైన ఆకాశం · Sunny</div>
+        <div class="weather-row">
+          <span>💧 Humidity: 52%</span>
+          <span>💨 Wind: 12km/h</span>
+        </div>
+        <div class="weather-row">
+          <span>🌅 Sunrise: 5:54 AM</span>
+          <span>🌇 Sunset: 6:41 PM</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="widget-head"><span class="dot"></span> అత్యంత చదివిన వార్తలు</div>
+      <div class="widget-body">
+        <ul class="mini-news-list">
+          <li>
+            <span class="mini-num">1</span>
+            <div>
+              <div class="mini-title">మార్కాపూర్ స్లేట్ పెన్సిల్‌కు GI Tag — జాతీయ గుర్తింపు</div>
+              <div class="mini-meta">📅 మే 11 · 👁 3,450</div>
+            </div>
+          </li>
+          <li>
+            <span class="mini-num">2</span>
+            <div>
+              <div class="mini-title">రైల్వే స్టేషన్ అభివృద్ధి — కొత్త ప్లాట్‌ఫామ్</div>
+              <div class="mini-meta">📅 మే 19 · 👁 2,841</div>
+            </div>
+          </li>
+          <li>
+            <span class="mini-num">3</span>
+            <div>
+              <div class="mini-title">12 పాఠశాలల్లో స్మార్ట్ క్లాస్‌రూమ్‌లు</div>
+              <div class="mini-meta">📅 మే 18 · 👁 2,190</div>
+            </div>
+          </li>
+          <li>
+            <span class="mini-num">4</span>
+            <div>
+              <div class="mini-title">ఛన్నకేశవస్వామి ఆలయంలో వైశాఖ పూజలు</div>
+              <div class="mini-meta">📅 మే 16 · 👁 1,876</div>
+            </div>
+          </li>
+          <li>
+            <span class="mini-num">5</span>
+            <div>
+              <div class="mini-title">24 గంటల నీటి సరఫరా పథకం ప్రారంభం</div>
+              <div class="mini-meta">📅 మే 12 · 👁 1,540</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="widget-head"><span class="dot"></span> రాబోయే కార్యక్రమాలు</div>
+      <div class="widget-body">
+        <ul class="events-list">
+          <li>
+            <div class="event-date"><strong>22</strong>మే</div>
+            <div>
+              <div class="event-name">ఇంటర్ విలేజ్ క్రికెట్ ఫైనల్</div>
+              <div class="event-place">📍 మార్కాపూర్ మైదానం · 9:00 AM</div>
+            </div>
+          </li>
+          <li>
+            <div class="event-date"><strong>25</strong>మే</div>
+            <div>
+              <div class="event-name">ఉచిత వైద్య శిబిరం</div>
+              <div class="event-place">📍 ప్రభుత్వ ఆసుపత్రి · 8:00 AM</div>
+            </div>
+          </li>
+          <li>
+            <div class="event-date"><strong>28</strong>మే</div>
+            <div>
+              <div class="event-name">మున్సిపల్ పబ్లిక్ హియరింగ్</div>
+              <div class="event-place">📍 కలెక్టర్ కార్యాలయం</div>
+            </div>
+          </li>
+          <li>
+            <div class="event-date"><strong>01</strong>జూన్</div>
+            <div>
+              <div class="event-name">రైతు అవగాహన సభ</div>
+              <div class="event-place">📍 పంచాయతీ కార్యాలయం</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="widget-head"><span class="dot"></span> సంప్రదింపు వివరాలు</div>
+      <div class="widget-body" style="font-size:0.8rem;line-height:2;color:var(--body)">
+        <p>📞 <strong>9849XXXXXX</strong></p>
+        <p>✉️ news@markapurnews.in</p>
+        <p>📍 మార్కాపూర్ రోడ్,<br/>&nbsp;&nbsp;&nbsp;&nbsp;ప్రకాశం జిల్లా, AP</p>
+        <p style="margin-top:8px;font-size:0.72rem;color:var(--muted)">వార్తలు పంపండి · వెలువడే సమయం: ప్రతిరోజు 6 AM</p>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- AD BANNER -->
+<div class="ad-banner">
+  <div class="ad-text">
+    <div class="ad-title">మీ వ్యాపార ప్రకటన ఇక్కడ</div>
+    <div class="ad-sub">Advertise with Markapur News · Reach 50,000+ monthly readers</div>
+  </div>
+  <button class="ad-btn">సంప్రదించండి</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="header-logo">
+        <span class="logo-tel" style="font-size:1.8rem;">మార్కాపూర్ వార్తలు</span>
+        <span class="logo-eng" style="font-size:0.85rem;">Markapur News</span>
+      </div>
+      <p>మార్కాపూర్ పట్టణం మరియు చుట్టుపక్కల గ్రామాలకు నమ్మకమైన స్థానిక వార్తలు అందించే మా లక్ష్యం. ప్రతిరోజూ తాజా వార్తలతో మీతో ఉంటాం.</p>
+    </div>
+    <div class="footer-col">
+      <h4>విభాగాలు</h4>
+      <ul>
+        <li><a href="#">స్థానిక వార్తలు</a></li>
+        <li><a href="#">వ్యవసాయం</a></li>
+        <li><a href="#">విద్య</a></li>
+        <li><a href="#">రాజకీయాలు</a></li>
+        <li><a href="#">క్రీడలు</a></li>
+        <li><a href="#">ఆరోగ్యం</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>ప్రముఖ స్థలాలు</h4>
+      <ul>
+        <li><a href="#">ఛన్నకేశవస్వామి ఆలయం</a></li>
+        <li><a href="#">మార్కాపూర్ రోడ్ స్టేషన్</a></li>
+        <li><a href="#">శ్రీశైలం ప్రాజెక్ట్</a></li>
+        <li><a href="#">స్లేట్ పెన్సిల్ పరిశ్రమ</a></li>
+        <li><a href="#">గిద్దలూరు రహదారి</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>సమాచారం</h4>
+      <ul>
+        <li><a href="#">మా గురించి</a></li>
+        <li><a href="#">సంప్రదించు</a></li>
+        <li><a href="#">ప్రకటనలు</a></li>
+        <li><a href="#">గోప్యతా విధానం</a></li>
+        <li><a href="#">వార్తలు పంపండి</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 మార్కాపూర్ న్యూస్ · Markapur News · All rights reserved · Prakasam District, AP</p>
+    <div class="social-links">
+      <a href="#" title="Facebook">f</a>
+      <a href="#" title="Twitter">𝕏</a>
+      <a href="#" title="YouTube">▶</a>
+      <a href="#" title="WhatsApp">W</a>
+      <a href="#" title="Telegram">T</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Date
+const d = new Date();
+const days=['ఆదివారం','సోమవారం','మంగళవారం','బుధవారం','గురువారం','శుక్రవారం','శనివారం'];
+const months=['జనవరి','ఫిబ్రవరి','మార్చి','ఏప్రిల్','మే','జూన్','జూలై','ఆగస్ట్','సెప్టెంబర్','అక్టోబర్','నవంబర్','డిసెంబర్'];
+document.getElementById('today-date').textContent = days[d.getDay()] + ', ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+
+// Modal
+function openModal(cat,title,img,body){
+  document.getElementById('modal-cat').textContent = cat;
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-img').src = img;
+  document.getElementById('modal-img').onerror = function(){ this.src='https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=720&q=80'; };
+  document.getElementById('modal-body').textContent = body;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='translateY(0)';
+    }
+  });
+},{threshold:0.1});
+
+document.querySelectorAll('.news-card,.strip-card,.opinion-card,.gallery-item').forEach(el=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(20px)';
+  el.style.transition='opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+
+// Search
+document.querySelector('.nav-search button').onclick = function(){
+  const q = document.querySelector('.nav-search input').value.trim();
+  if(q) alert('వెతుకుతున్నాం: "' + q + '"\n\n(Full search needs backend integration)');
+};
+document.querySelector('.nav-search input').onkeydown = function(e){
+  if(e.key==='Enter') document.querySelector('.nav-search button').click();
+};
+</script>
+</body>
+</html>
